@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.OnlineRadioApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <style name="Button.Gold" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/gold</item>
+    </style>
+    <style name="Theme.OnlineRadioApp" parent="Base.Theme.OnlineRadioApp" />
+</resources>
