@@ -36,8 +36,11 @@ class RadioRepository @Inject constructor(private val store: RadioEntity.Store) 
         //FilterMode.COMPLETED -> store.filtered(isCompleted = true)
     }
     suspend fun save(model: RadioModel) {
-        withContext(appScope.coroutineContext) {
+        /*withContext(appScope.coroutineContext) {
             store.save(SalaryEntity(model))
-        }
+        }*/
+    }
+    suspend fun saveAlternative(){
+
     }
 }
