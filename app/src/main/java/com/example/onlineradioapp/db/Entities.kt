@@ -83,7 +83,9 @@ data class RadioEntity(
         @Transaction
         @Query("SELECT * FROM genres")
         fun all(): Flow<List<GenreAndRadioStations>>
-        
+        @Transaction
+        @Query("Select * from radio")
+        fun getAllStations(): Flow<List<RadioEntity>>
         @Transaction
         @Query("SELECT * from genres where id=:id")
         suspend fun getByGenreId(id:Int): GenreAndRadioStations

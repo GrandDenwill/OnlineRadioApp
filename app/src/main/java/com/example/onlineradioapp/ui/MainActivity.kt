@@ -10,7 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.onlineradioapp.R
 import com.example.onlineradioapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-
+//import dagger.hilt.android.
 @AndroidEntryPoint
 class MainActivity  : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

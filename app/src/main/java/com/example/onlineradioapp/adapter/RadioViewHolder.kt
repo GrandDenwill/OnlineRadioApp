@@ -18,6 +18,7 @@ class RadioViewHolder(
         binding.apply {
             radioName.text = model.radioName
             radioDescription.text = model.radioDescription
+            radioGenre.text = model.radioGenre.toString()
             root.setOnClickListener {onRowClick(model) }
             if(model.isFavorite){
                 favorited.background =

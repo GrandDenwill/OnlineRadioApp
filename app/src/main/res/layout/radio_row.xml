@@ -10,12 +10,12 @@
         android:id="@+id/radioDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:singleLine="true"
-        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/info"
-        app:layout_constraintStart_toStartOf="@+id/radioName"
+        app:layout_constraintEnd_toStartOf="@+id/radioGenre"
+        app:layout_constraintStart_toEndOf="@id/imageRadio"
         app:layout_constraintTop_toBottomOf="@+id/radioName" />
 
     <TextView
@@ -24,9 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/radioDescription"
-        app:layout_constraintEnd_toStartOf="@+id/info"
+        app:layout_constraintEnd_toStartOf="@+id/radioGenre"
         app:layout_constraintStart_toEndOf="@+id/imageRadio"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +47,6 @@
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/ic_about"
         android:backgroundTint="@color/gold"
@@ -57,7 +55,7 @@
         android:theme="@style/Button.Gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/favorited"
-        app:layout_constraintStart_toEndOf="@+id/radioDescription"
+        app:layout_constraintStart_toEndOf="@+id/radioGenre"
         app:layout_constraintTop_toTopOf="parent"
         app:rippleColor="@color/gold" />
 
@@ -65,6 +63,7 @@
         android:id="@+id/favorited"
         android:layout_width="32dp"
         android:layout_height="32dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
@@ -78,5 +77,16 @@
         app:layout_constraintStart_toEndOf="@+id/info"
         app:layout_constraintTop_toTopOf="parent"
         app:rippleColor="@color/gold" />
+
+    <TextView
+        android:id="@+id/radioGenre"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Genre"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/info"
+        app:layout_constraintStart_toEndOf="@+id/radioName"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

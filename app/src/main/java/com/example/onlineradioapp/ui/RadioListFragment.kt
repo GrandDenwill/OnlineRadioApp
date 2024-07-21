@@ -33,14 +33,10 @@ import java.math.RoundingMode
 
 @AndroidEntryPoint
 class RadioListFragment : Fragment(){
-    private var binding: FragmentRosterBinding? = null
+    private lateinit var  binding: FragmentRosterBinding
     private var currentRadioStation: RadioModel?=null
-    val vm: RadioViewModel by viewModels()
+    val vm: RadioViewModel by viewModels()  
     private var player: RadioPlayer? = null
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.actions_roster,menu)
-      super.onCreateOptionsMenu(menu, inflater)
-    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -57,6 +53,7 @@ class RadioListFragment : Fragment(){
         // Note how we can tie the MenuProvider to the viewLifecycleOwner
         // and an optional Lifecycle.State (here, RESUMED) to indicate when
         // the menu should be visible
+
         menuHost.addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
                 // Add menu items here
@@ -84,7 +81,7 @@ class RadioListFragment : Fragment(){
             layoutInflater,
             ::playMusic
         )
-        binding?.items?.apply {
+        binding.items.apply {
             layoutManager = LinearLayoutManager(activity)
             addItemDecoration(
                 DividerItemDecoration(activity,
@@ -107,7 +104,7 @@ class RadioListFragment : Fragment(){
             currentRadioStation = vm.currentRadioStation
             player = vm.radioPlayer
             if (currentRadioStation !== null) {
-                binding?.apply {
+                binding.apply {
                     if (!player?.mediaPlayer!!.isPlaying) {
                         playButton.background =
                             activity?.let { ContextCompat.getDrawable(it, R.drawable.play_icon) };
@@ -124,7 +121,7 @@ class RadioListFragment : Fragment(){
         currentRadioStation = radio
     }
     private fun onPlayButton(){
-        binding?.apply {
+        binding.apply {
             if (player?.mediaPlayer!!.isPlaying) {
                 player?.pause()
                 playButton.background =
@@ -161,7 +158,7 @@ class RadioListFragment : Fragment(){
         var song =  if(player?.getMeta()?.title=="")
             "Музыка"
         else player?.getMeta()?.title
-        binding?.apply{
+        binding.apply{
             radioPlayer.visibility   = View.VISIBLE
             radioCurrent.text = currentRadioStation?.radioName
             songTitle.text = song
