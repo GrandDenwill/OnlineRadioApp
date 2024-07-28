@@ -22,7 +22,13 @@ class RadioAdapter(private val inflater: LayoutInflater, private val onRowClick:
             return oldItem.radioId == newItem.radioId
         }
         override fun areContentsTheSame(oldItem: RadioModel, newItem: RadioModel): Boolean {
-            return areItemsTheSame(oldItem,newItem)
+            return oldItem.radioId == newItem.radioId&&
+            oldItem.radioDescription == newItem.radioDescription&&
+            oldItem.radioName == newItem.radioName&&
+                    oldItem.radioURL == newItem.radioURL&&
+                    oldItem.isFavorite == newItem.isFavorite&&
+                    oldItem.radioDescription == newItem.radioDescription
         }
     }
+
 }

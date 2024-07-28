@@ -43,14 +43,5 @@ class RadioRepository @Inject constructor(private val store: RadioEntity.Store) 
             store.save(SalaryEntity(model))
         }*/
     }
-    suspend fun saveAlternative(){
-        println("saveAlternative2221433")
-    }
-    suspend fun saveAlternative2(){
-        println("ssss")
-    }
-    suspend fun saveAlternative3(){
-        println("ssssssss")
-    }
 
 }

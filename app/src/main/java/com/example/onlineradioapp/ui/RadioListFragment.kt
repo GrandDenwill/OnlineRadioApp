@@ -8,6 +8,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.OptIn
 import androidx.core.content.ContextCompat
 import androidx.core.view.MenuHost
@@ -89,18 +90,19 @@ class RadioListFragment : Fragment(){
             )
             this.adapter = adapter
         }
-        /*viewLifecycleOwner.lifecycleScope.launchWhenResumed {
+        viewLifecycleOwner.lifecycleScope.launchWhenResumed {
                 vm.states.collect { state ->
+                    Toast.makeText(activity,"Some state", Toast.LENGTH_SHORT).show()
                     adapter.submitList(state.items)
                 }
-            }*/
-        lifecycleScope.launch {
+            }
+        /*lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 vm.states.collect { state ->
                     adapter.submitList(state.items)
                 }
             }
-        }
+        }*/
             currentRadioStation = vm.currentRadioStation
             player = vm.radioPlayer
             if (currentRadioStation !== null) {

@@ -90,7 +90,7 @@ data class RadioEntity(
         @Query("SELECT * from genres where id=:id")
         suspend fun getByGenreId(id:Int): GenreAndRadioStations
         @Transaction
-        @Query("SELECT * from radio ")
+        @Query("SELECT * from radio order by radioGenre")
         fun getAllRadio():Flow<List<RadioEntity>>
     }
 }
