@@ -43,5 +43,8 @@ class RadioRepository @Inject constructor(private val store: RadioEntity.Store) 
             store.save(SalaryEntity(model))
         }*/
     }
+    fun save2(){
+        println("")
+    }
 
 }
